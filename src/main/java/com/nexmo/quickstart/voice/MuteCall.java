@@ -28,7 +28,7 @@ public class MuteCall {
         CallEvent call = client.getVoiceClient().createCall(new Call(
                 TO_NUMBER,
                 NEXMO_NUMBER,
-                "https://gist.githubusercontent.com/cr0wst/9417cac4c0d9004805a04aed403ae94a/raw/b95e3cd5126587d25986e0bf832eb33a7538394d/tts_long.json"
+                "https://gist.githubusercontent.com/yallen011/e720c5d127791e0995a9359c195c1eaa/raw/882dfde8e26ebcd167628a576d244d8915cbaac4/long-tts.json"
         ));
 
         /*

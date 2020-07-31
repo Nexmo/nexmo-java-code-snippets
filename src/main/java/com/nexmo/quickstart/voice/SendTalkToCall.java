@@ -3,6 +3,7 @@ package com.nexmo.quickstart.voice;
 import com.nexmo.client.NexmoClient;
 import com.nexmo.client.voice.Call;
 import com.nexmo.client.voice.CallEvent;
+import com.nexmo.client.voice.TalkResponse;
 import com.nexmo.client.voice.VoiceName;
 
 import static com.nexmo.quickstart.Util.configureLogging;
@@ -33,6 +34,7 @@ public class SendTalkToCall {
         client.getVoiceClient().startTalk(UUID, TEXT, VoiceName.KIMBERLY, 0);
 
         Thread.sleep(5000);
-        client.getVoiceClient().stopTalk(UUID);
+        TalkResponse response = client.getVoiceClient().stopTalk(UUID);
+        System.out.println(response.getMessage());
     }
 }

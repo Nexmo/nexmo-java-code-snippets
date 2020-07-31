@@ -1,5 +1,6 @@
 package com.nexmo.quickstart.voice;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nexmo.client.NexmoClient;
 import com.nexmo.client.voice.CallInfoPage;
@@ -13,7 +14,7 @@ import static com.nexmo.quickstart.Util.configureLogging;
 import static com.nexmo.quickstart.Util.envVar;
 
 public class RetrieveInfoForAllCalls {
-    public static void main(String... args) throws Exception {
+    public static void main(String... args) throws Exception, JsonProcessingException {
         configureLogging();
 
         final String NEXMO_APPLICATION_ID = envVar("NEXMO_APPLICATION_ID");
@@ -32,7 +33,14 @@ public class RetrieveInfoForAllCalls {
         CallInfoPage calls = client.getVoiceClient().listCalls(filter);
 
         // com.fasterxml.jackson.databind.ObjectMapper;
-        System.out.println(new ObjectMapper().writer().writeValueAsString(calls));
+        calls.iterator().forEachRemaining(callInfo -> {
+            try {
+                System.out.println(new ObjectMapper().writer().writeValueAsString(callInfo));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+        });
+
     }
 
     private static Date getTodaysDate() {

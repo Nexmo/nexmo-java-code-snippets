@@ -49,7 +49,7 @@ public class ReceiveSMS {
             return "";
         };
 
-        Spark.port(8080);
+        Spark.port(3000);
         Spark.get("/webhooks/inbound-sms", inboundSmsAsGet);
         Spark.post("/webhooks/inbound-sms", inboundSmsAsPost);
     }

@@ -46,7 +46,7 @@ public class StreamAudioToCall {
         CallEvent call = client.getVoiceClient().createCall(new Call(
                 TO_NUMBER,
                 NEXMO_NUMBER,
-                "https://gist.githubusercontent.com/ChrisGuzman/d6add5b23a8cf913dcdc5a8eabc223ef/raw/a1eb52e0ce2d3cef98bab14d27f3adcdff2af881/long_talk.json"
+                "https://gist.githubusercontent.com/yallen011/e720c5d127791e0995a9359c195c1eaa/raw/882dfde8e26ebcd167628a576d244d8915cbaac4/long-tts.json"
         ));
 
         Thread.sleep(20000);

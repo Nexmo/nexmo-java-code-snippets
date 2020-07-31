@@ -40,12 +40,12 @@ public class SendUnicodeMessage {
 
         NexmoClient client = NexmoClient.builder().apiKey(NEXMO_API_KEY).apiSecret(NEXMO_API_SECRET).build();
 
-        TextMessage message = new TextMessage("Acme Inc", TO_NUMBER, "Blue Öyster Cult \uD83E\uDD18", true);
+        TextMessage message = new TextMessage("17603592332", TO_NUMBER, "Blue Öyster Cult \uD83E\uDD18", true);
 
         SmsSubmissionResponse responses = client.getSmsClient().submitMessage(message);
 
         for (SmsSubmissionResponseMessage responseMessage : responses.getMessages()) {
-            System.out.println(message);
+            System.out.println(responseMessage);
         }
     }
 }

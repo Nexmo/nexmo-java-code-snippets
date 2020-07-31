@@ -3,6 +3,7 @@ package com.nexmo.quickstart.voice;
 import com.nexmo.client.NexmoClient;
 import com.nexmo.client.voice.Call;
 import com.nexmo.client.voice.CallEvent;
+import com.nexmo.client.voice.ModifyCallResponse;
 
 import static com.nexmo.quickstart.Util.configureLogging;
 import static com.nexmo.quickstart.Util.envVar;
@@ -28,7 +29,7 @@ public class TransferCall {
         CallEvent call = client.getVoiceClient().createCall(new Call(
                 TO_NUMBER,
                 NEXMO_NUMBER,
-                "https://gist.githubusercontent.com/cr0wst/9417cac4c0d9004805a04aed403ae94a/raw/b95e3cd5126587d25986e0bf832eb33a7538394d/tts_long.json"
+                "https://gist.githubusercontent.com/yallen011/e720c5d127791e0995a9359c195c1eaa/raw/882dfde8e26ebcd167628a576d244d8915cbaac4/long-tts.json"
         ));
 
         /*
@@ -38,6 +39,7 @@ public class TransferCall {
 
         final String UUID = call.getUuid();
         final String NCCO_URL = "https://developer.nexmo.com/ncco/tts.json";
-        client.getVoiceClient().transferCall(UUID, NCCO_URL);
+        ModifyCallResponse response = client.getVoiceClient().transferCall(UUID, NCCO_URL);
+        System.out.println(response);
     }
 }

@@ -51,7 +51,7 @@ public class RecordCallSplitAudio {
 
             res.type("application/json");
 
-            return new Ncco(record, connect);
+            return new Ncco(record, connect).toJson();
         };
 
         /*

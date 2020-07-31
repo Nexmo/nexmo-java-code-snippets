@@ -40,5 +40,7 @@ public class DeleteApplication {
         ApplicationClient applicationClient = client.getApplicationClient();
 
         applicationClient.deleteApplication(NEXMO_APPLICATION_ID);
+
+        System.out.println("Application Deleted");
     }
 }
