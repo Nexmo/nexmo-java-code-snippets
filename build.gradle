@@ -4,11 +4,11 @@ plugins {
 }
 
 // Uncomment the following lines to work with a local copy of nexmo-java:
- configurations.all {
-    resolutionStrategy.dependencySubstitution {
-        substitute module("com.nexmo:client") with project(":client")
-    }
- }
+// configurations.all {
+//    resolutionStrategy.dependencySubstitution {
+//        substitute module("com.nexmo:client") with project(":client")
+//    }
+// }
 
 repositories {
     mavenCentral()
@@ -17,7 +17,7 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
 
-    implementation 'com.nexmo:client:5.2.0'
+    implementation 'com.nexmo:client:5.4.0'
     implementation 'com.sparkjava:spark-core:2.6.0'
     implementation 'javax.xml.bind:jaxb-api:2.3.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
