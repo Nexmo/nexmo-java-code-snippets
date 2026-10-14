@@ -17,7 +17,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     implementation 'com.nexmo:client:5.6.0'
-    implementation "com.sparkjava:spark-core:2.6.0"
+    implementation "com.sparkjava:spark-core:2.9.4"
     implementation 'javax.xml.bind:jaxb-api:2.3.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
 }
